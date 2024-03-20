@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+// Implement local storage into this
 const authSlice = createSlice({
   name: 'auth',
   initialState: { isLoggedIn: false },
