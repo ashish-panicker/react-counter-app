@@ -1,13 +1,9 @@
 import Counter from './Counter'
 
-const Body = (props) => {
+const Body = () => {
   return (
     <div>
-      <Counter
-        counter={props.counter}
-        increment={props.increment}
-        decrement={props.decrement}
-      />
+      <Counter />
     </div>
   )
 }

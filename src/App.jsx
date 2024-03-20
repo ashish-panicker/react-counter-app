@@ -1,21 +1,12 @@
-import React from 'react'
 import Body from './Body'
+import counterStore from './store/index.'
+import { Provider } from 'react-redux'
 
 function App() {
-  const [counter, setCounter] = React.useState(0)
-
-  const increment = () => {
-    setCounter(counter + 1)
-  }
-
-  const decrement = () => {
-    setCounter(counter - 1)
-  }
-
   return (
-    <>
-      <Body counter={counter} increment={increment} decrement={decrement} />
-    </>
+    <Provider store={counterStore}>
+      <Body />
+    </Provider>
   )
 }
 
