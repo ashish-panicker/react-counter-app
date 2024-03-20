@@ -1,5 +1,5 @@
 import Body from './Body'
-import counterStore from './store/index.'
+import counterStore from './store/'
 import { Provider } from 'react-redux'
 
 function App() {

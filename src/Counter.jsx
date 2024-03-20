@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux'
-
+import { increment, decrement } from './store'
 /**
  * useSelector:   hook to select value from the store
  * useDispatch:   hook to dispatch an action to the store
@@ -10,20 +10,14 @@ const Counter = () => {
   const message = useSelector((state) => state.message)
   const dispatch = useDispatch()
 
-  const increment = () => {
-    const action = {
-      type: 'INCREMENT',
-      payload: { value: 1, message: 'Counter got increased.' },
-    }
-    dispatch(action)
+  const increaseCounter = () => {
+    const payload = { value: 1, message: 'Counter got increased.' }
+    dispatch(increment(payload))
   }
 
-  const decerment = () => {
-    const action = {
-      type: 'DECREMENT',
-      payload: { value: 1, message: 'Counter got decreased.' },
-    }
-    dispatch(action)
+  const decreaseCounter = () => {
+    const payload = { value: 1, message: 'Counter got decreased.' }
+    dispatch(decrement(payload))
   }
 
   return (
@@ -32,10 +26,10 @@ const Counter = () => {
       <p>Counter: {counter}</p>
       <p> {message} </p>
       <div>
-        <button type="button" onClick={increment}>
+        <button type="button" onClick={increaseCounter}>
           Increment
         </button>
-        <button type="button" onClick={decerment}>
+        <button type="button" onClick={decreaseCounter}>
           Decrement
         </button>
       </div>
