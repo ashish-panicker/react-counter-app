@@ -1,13 +1,13 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { increment, decrement } from './store'
+import { increment, decrement } from './store/slices/counterSlice'
 /**
  * useSelector:   hook to select value from the store
  * useDispatch:   hook to dispatch an action to the store
  */
 
 const Counter = () => {
-  const counter = useSelector((state) => state.counter)
-  const message = useSelector((state) => state.message)
+  const value = useSelector((state) => state.counter.value)
+  const message = useSelector((state) => state.counter.message)
   const dispatch = useDispatch()
 
   const increaseCounter = () => {
@@ -23,7 +23,7 @@ const Counter = () => {
   return (
     <div>
       <h1>React Counter Application</h1>
-      <p>Counter: {counter}</p>
+      <p>Counter: {value}</p>
       <p> {message} </p>
       <div>
         <button type="button" onClick={increaseCounter}>
